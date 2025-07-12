@@ -7,16 +7,12 @@ const HomeCard = ({ category, IconComponent, onClick }) => {
     <motion.div
       onClick={onClick}
       layout
-      whileHover={{ scale: 1.05, boxShadow: '0 8px 20px rgba(0,0,0,0.2)' }}
+      whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="cursor-pointer bg-white dark:bg-gray-800 p-6 rounded-lg flex flex-col items-center justify-center transition duration-300 ease-in-out"
+      className="cursor-pointer bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-md flex flex-col items-center justify-center transition duration-300 ease-in-out hover:shadow-xl"
     >
-      {IconComponent && (
-        <IconComponent className="w-12 h-12 text-blue-500 dark:text-blue-300" />
-      )}
-      <h3 className="mt-4 text-lg font-semibold text-gray-800 dark:text-gray-100 text-center">
-        {category}
-      </h3>
+      <IconComponent className="text-3xl text-purple-600 dark:text-purple-400 mb-2" />
+      <span className="text-lg font-semibold text-gray-800 dark:text-gray-100">{category}</span>
     </motion.div>
   );
 };

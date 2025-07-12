@@ -19,8 +19,8 @@ export default function Login() {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6">
-      <h2 className="text-2xl mb-4">Login</h2>
+    <div className="max-w-md mx-auto p-6 bg-grey">
+      <h2 className="text-2xl mb-4 text-blue-400">Login</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="email" placeholder="Email"
@@ -39,7 +39,7 @@ export default function Login() {
           Log In
         </button>
       </form>
-        <p className="mt-4 text-sm">
+        <p className="mt-4 text-sm text-blue-300">
             Don't have an account? <a href="/register" className="text-blue-600">Register</a>   
         </p>
     </div>

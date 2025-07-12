@@ -36,7 +36,7 @@ export default function Register() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
     >
-      <h2 className="text-2xl font-semibold mb-6 text-center">Create Account</h2>
+      <h2 className="text-2xl font-semibold mb-6 text-center text-blue-400">Create Account</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
@@ -70,7 +70,11 @@ export default function Register() {
         >
           {loading ? 'Registering...' : 'Register'}
         </button>
+       <p className="mt-4 text-sm text-blue-300">
+            Already have an account? <a href="/login" className="text-blue-600">Login</a>   
+        </p>
       </form>
+      
     </motion.div>
   );
 }
