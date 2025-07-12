@@ -15,7 +15,7 @@ const cors = require('cors');
 
 app.use(cors({
   origin: 'http://localhost:5173',
-   'https://quiz-star-mv68.vercel.app',
+  'https://quiz-star-mv68.vercel.app',
   credentials: true
 }));
 app.use(express.json());
