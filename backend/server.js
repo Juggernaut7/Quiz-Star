@@ -1,17 +1,14 @@
 const express = require('express');
 const dotenv = require('dotenv');
-// const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const connectDB = require('./config/db');
+const cors = require('cors');
 
 dotenv.config();
 connectDB();
 
 const app = express();
-
-// Middlewares
-const cors = require('cors');
 
 const allowedOrigins = [
   'http://localhost:5173',
@@ -33,18 +30,16 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(morgan('dev'));
 
-// Auth routes
+// Routes
 app.use('/api/auth', require('./routes/authRoutes'));
-
-// Public Quiz route
 app.use('/api/quiz', require('./routes/quizRoutes'));
 
-// Protected Score route
+// Protected route
 const authMiddleware = require('./middleware/authMiddleware');
 app.use('/api/score', authMiddleware, require('./routes/scoreRoutes'));
 
-// Basic health check
-app.get("/", (req, res) => {
+// Health check
+app.get('/', (req, res) => {
   res.send('QuizStar API Running');
 });
 
