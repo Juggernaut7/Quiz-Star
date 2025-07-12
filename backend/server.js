@@ -33,7 +33,7 @@ const authMiddleware = require('./middleware/authMiddleware');
 app.use('/api/score', authMiddleware, require('./routes/scoreRoutes'));
 
 // Basic health check
-app.get('/', (req, res) => {
+app.get( (req, res) => {
   res.send('QuizStar API Running');
 });
 
