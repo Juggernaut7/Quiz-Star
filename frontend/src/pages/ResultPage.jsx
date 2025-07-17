@@ -19,11 +19,11 @@ export default function ResultPage() {
   }, [score, total, navigate]);
 
   if (score === undefined || total === undefined) {
-    return <p className="text-center mt-10 text-gray-700">Invalid result. Redirecting...</p>;
+    return <p className="text-center mt-10 text-lg text-gray-700 dark:text-gray-300">Invalid result. Redirecting...</p>; // Responsive text size
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 p-4 sm:p-6"> {/* Added padding */}
       <ResultCard score={score} total={total} />
     </div>
   );
